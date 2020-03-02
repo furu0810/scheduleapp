@@ -4,4 +4,10 @@ Rails.application.routes.draw do
   #トップページのルーディング
   root to: "toppages#index"
   
+  #ユーザーの新規登録URL
+  get "signup", to: "users#new"
+  
+  #ユーザーのRESTfulなルーディング
+  resources :users, only: [:show, :new, :edit, :destroy, :create, :update]
+  
 end
