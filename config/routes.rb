@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   #トップページのルーディング
   root to: "toppages#index"
   
+  #ログイン処理のルーディング
+  get "login", to: "sessions#new"
+  post "login", to: "sessions#create"
+  delete "logout", to: "sessions#destroy"
+  
   #ユーザーの新規登録URL
   get "signup", to: "users#new"
   

@@ -1,0 +1,35 @@
+<div class="m-5 text-center text-primary">
+  
+  <h3><%= @user.name %>さんの詳細情報</h3>
+  
+</div>
+
+<div class="row">
+  
+  <div class="col-sm-6 offset-sm-3">
+  
+    <div class="center jumbotron bg-success">
+      
+      <p>名前：<%= @user.name %></p>
+      
+      <p>Eメール：<%= @user.email %></p>
+      
+      <p>パスワード：<%= @user.password_digest %></p>
+      
+    </div>
+  
+  </div>
+  
+</div>
+
+<div class="row">
+  
+  <div class="col-sm-6 offset-sm-3">
+
+    <button type="button" class="btn btn-primary btn-lg">編集</button>
+
+    <button type="button" class="btn btn-danger btn-lg">退会</button>
+    
+  </div>
+
+</div>
