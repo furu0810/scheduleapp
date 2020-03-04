@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #トップページのルーディング
   root to: "toppages#index"
   
+  
   #ログイン処理のルーディング
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
@@ -13,6 +14,6 @@ Rails.application.routes.draw do
   get "signup", to: "users#new"
   
   #ユーザーのRESTfulなルーディング
-  resources :users, only: [:show, :new, :edit, :destroy, :create, :update]
+  resources :users
   
 end

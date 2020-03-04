@@ -10,11 +10,9 @@
   
     <div class="center jumbotron bg-success">
       
-      <p>名前：<%= @user.name %></p>
+      <h4>名前：<%= @user.name %></h4>
       
-      <p>Eメール：<%= @user.email %></p>
-      
-      <p>パスワード：<%= @user.password_digest %></p>
+      <h4>Eメール：<%= @user.email %></h4>
       
     </div>
   
@@ -26,9 +24,9 @@
   
   <div class="col-sm-6 offset-sm-3">
 
-    <button type="button" class="btn btn-primary btn-lg">編集</button>
+    <%= link_to "編集", edit_user_path(@user), class: "btn btn-lg btn-primary" %>
 
-    <button type="button" class="btn btn-danger btn-lg">退会</button>
+    <%= link_to "退会", user_path, method: :delete, data: { confirm: "本当に退会してよろしいですか?"}, class: "btn btn-lg btn-danger" %>
     
   </div>
 

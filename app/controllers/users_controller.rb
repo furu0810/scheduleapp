@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :require_user_logged_in, only: [:index, :show, :edit, :destroy]
+  before_action :require_user_logged_in, only: [:show, :edit, :destroy]
   
   def index 
   end
@@ -31,12 +31,34 @@ class UsersController < ApplicationController
   end
   
   def edit
+    
+    @user = User.find(params[:id])
+    
   end
   
   def update
+    
+    @user = User.find(params[:id])
+    
+    if @user.update_attributes(user_params)
+      #更新に成功した時の処理
+      flash[:success] = "更新に成功しました。"
+      redirect_to @user
+    else
+      flash.now[:danger] = "更新に失敗しました。"
+      render :edit
+    end
+    
   end
   
   def destroy
+    
+    @user = User.find(id: params[:id])
+    
+    @user.destroy
+    flash[:success] = "ユーザーは正常に削除されました。"
+    redirect_back(fallback_location: root_path)
+    
   end
   
   #Strongparamater
