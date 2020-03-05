@@ -53,11 +53,17 @@ class UsersController < ApplicationController
   
   def destroy
     
+    #ユーザーの退会時にユーザーの削除とログイン状態クリアを同時に行う処理
+    #ユーザー削除処理
     @user = User.find(id: params[:id])
     
     @user.destroy
     flash[:success] = "ユーザーは正常に削除されました。"
-    redirect_back(fallback_location: root_path)
+    
+    #ログアウト処理
+    session[:user_id] = nil
+    flash[:success] = "ログアウトしました。"
+    redirect_to root_url
     
   end
   
