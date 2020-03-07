@@ -12,6 +12,9 @@ class SchedulesController < ApplicationController
   end
 
   def index
+    
+    @schedules = current_user.schedules.all
+    
   end
 
   def edit
