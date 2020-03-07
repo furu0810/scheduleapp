@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   #ユーザーのRESTfulなルーディング
   resources :users
   
+  #スケジュールのルーディング
+  resources :schedules
+  
 end
