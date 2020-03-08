@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Simplecalendarのgem
 gem "simple_calendar", "~> 2.0"
+
+#バリデーションエラーメッセージの日本語化
+gem "rails-i18n"
