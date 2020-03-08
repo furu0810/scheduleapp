@@ -1,3 +1,54 @@
+<h3>スケジュール詳細一覧</h3>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="text-center">リスト</th>
+      <th class="text-center">タイトル</th>
+      <th class="text-center">内容</th>
+      <th class="text-center">場所</th>
+      <th class="text-center">開始時間</th>
+      <th class="text-center">終了時間</th>
+    </tr>
+  </thead> 
+     
+  <tbody>
+         
+    <% @schedules.each do |schedule| %>
+      
+      <tr>  
+        <td class="text-center">
+          <%= link_to schedule.id, schedule %>
+        </td>   
+        
+        <td class="text-center">
+          <%= schedule.title %>
+        </td>
+        
+      
+        <td class="text-center"> 
+          <%= schedule.body %>
+        </td>
+        
+        <td class="text-center"> 
+          <%= schedule.place %>
+        </td>
+        
+        <td class="text-center"> 
+          <%= schedule.start_time %>
+        </td>
+        
+        <td class="text-center"> 
+          <%= schedule.end_time %>
+        </td>
+      </tr>
+        
+  <% end %>
+
+  </tbody>       
+</table>
+
 <%= link_to "スケジュールの新規登録", new_schedule_path, class: "btn btn-lg btn-success" %>
 
 <%= month_calendar  events: @schedules do |date, schedules| %>
@@ -8,7 +59,7 @@
   
     <div>
       
-      <%= schedule.title %>
+      <%= schedule.title%>
       
     </div>
     
