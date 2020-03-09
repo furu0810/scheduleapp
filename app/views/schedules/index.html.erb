@@ -1,4 +1,8 @@
-<%= link_to "スケジュールの新規登録", new_schedule_path, class: "btn btn-lg btn-success" %>
+<div class="float-right">
+  <%= link_to "スケジュールの新規登録", new_schedule_path, class: "btn btn-lg btn-success" %>
+</div>
+
+<h4><%=current_user.name %></h4>
 
 <h3>スケジュール一覧</h3>
 
