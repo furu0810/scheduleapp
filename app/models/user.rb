@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6}
   
-  #Scheduleモデルとの関連付け(アソシエーション)
-  has_many :schedules
+  #Scheduleモデルとの関連付け(アソシエーション),ユーザーに紐づくスケジュールの削除処理
+  has_many :schedules, dependent: :destroy
   
 end

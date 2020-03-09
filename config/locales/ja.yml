@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      user:
+      schedule:
+    attributes:
+      schedule:
+        id:
+        title: タイトル
+        body: 内容
+        place: 場所
+        start_time: 開始時間
+        end_time: 開始時間
+      user:
+        id:
+        name: 名前
+        email: Eメール
+        password: パスワード

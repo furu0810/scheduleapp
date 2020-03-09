@@ -55,14 +55,14 @@ class UsersController < ApplicationController
     
     #ユーザーの退会時にユーザーの削除とログイン状態クリアを同時に行う処理
     #ユーザー削除処理
-    @user = User.find(id: params[:id])
+    @user = User.find(params[:id])
     
     @user.destroy
     flash[:success] = "ユーザーは正常に削除されました。"
     
     #ログアウト処理
     session[:user_id] = nil
-    flash[:success] = "ログアウトしました。"
+    flash[:success] = "退会しました。"
     redirect_to root_url
     
   end
