@@ -59,3 +59,7 @@ gem "simple_calendar", "~> 2.0"
 
 #バリデーションエラーメッセージの日本語化
 gem "rails-i18n"
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end
