@@ -8,4 +8,7 @@ class Schedule < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
   
+  #Notificationモデルの関連付け(アソシエーション)およびスケジュールに紐づいた通知の削除処理
+  has_many :notifications, dependent: :destroy
+  
 end
