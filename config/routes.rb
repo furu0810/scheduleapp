@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   #トップページのルーディング
   root to: "toppages#index"
   
+  #通知機能のルーディング
+  resources :notifications
   
   #ログイン処理のルーディング
   get "login", to: "sessions#new"
