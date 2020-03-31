@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_07_023631) do
+ActiveRecord::Schema.define(version: 2020_03_28_144648) do
+
+  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "action"
+    t.boolean "checked", default: false, null: false
+    t.bigint "schedule_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["schedule_id"], name: "index_notifications_on_schedule_id"
+  end
 
   create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "body"
@@ -32,5 +41,6 @@ ActiveRecord::Schema.define(version: 2020_03_07_023631) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "notifications", "schedules"
   add_foreign_key "schedules", "users"
 end

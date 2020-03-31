@@ -10,5 +10,5 @@ class Schedule < ApplicationRecord
   
   #Notificationモデルの関連付け(アソシエーション)およびスケジュールに紐づいた通知の削除処理
   has_many :notifications, dependent: :destroy
-  
+    
 end

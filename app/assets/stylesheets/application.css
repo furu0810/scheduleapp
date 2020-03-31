@@ -10,7 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  
+ 
  *= require simple_calendar
- *= require_tree .
+ 
+ #ページごとにCSSを適用するためにrequire_treeを削除
+
  *= require_self
  */
