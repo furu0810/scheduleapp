@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:show, :edit, :destroy]
   
   def index 
+    
+    redirect_to signup_path
+    
   end
   
   def show
