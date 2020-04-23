@@ -15,3 +15,21 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 #toppageへのCSS適用コードの追加
 Rails.application.config.assets.precompile += %w( toppages/index.css )
+
+#ユーザーの新規登録ページへのCSS適用コードの追加
+Rails.application.config.assets.precompile += %w( users/new.css )
+
+#ユーザー詳細ページへのCSS適用コードの追加
+Rails.application.config.assets.precompile += %w( users/show.css )
+
+#ログインページにCSS適用コードの追加
+Rails.application.config.assets.precompile += %w( sessions/new.css )
+
+#スケジュール一覧ページに対するCSS適用コードの追加
+Rails.application.config.assets.precompile += %w( schedules/index.css )
+
+#スケジュール詳細ページに対するCSS適用コードの追加
+Rails.application.config.assets.precompile += %w( schedules/show.css )
+
+#スケジュール新規登録ページに対するCSS適用コードの追加
+Rails.application.config.assets.precompile += %w( schedules/new.css )

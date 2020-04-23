@@ -1,35 +1,42 @@
-<div class="m-5 text-center text-primary">
-  
-  <h3><%= @user.name %>さんの詳細情報</h3>
-  
-</div>
+<%# ユーザー詳細ページにCSSを適用 #%>
+<%= stylesheet_link_tag "users/show", :media => "all" %>
 
-<div class="row">
+<div class="bg-image">
+
+  <div class="m-5 text-center text-primary">
+    
+    <h3><%= @user.name %>さんの詳細情報</h3>
+    
+  </div>
   
-  <div class="col-sm-6 offset-sm-3">
+  <div class="row">
+    
+    <div class="col-sm-6 offset-sm-3">
+    
+      <div class="center jumbotron bg-success">
+        
+        <p>名前：<%= @user.name %></p>
+        
+        <p>Eメール：<%= @user.email %></p>
+        
+      </div>
+    
+    </div>
+    
+  </div>
   
-    <div class="center jumbotron bg-success">
+  <div class="row">
+    
+    <div class="col-sm-6 offset-sm-3">
+  
+      <%= link_to "編集", edit_user_path(@user), class: "btn btn-lg btn-primary" %>
+  
+      <%= link_to "退会", user_path, method: :delete, data: { confirm: "本当に退会してよろしいですか?"}, class: "btn btn-lg btn-danger" %>
       
-      <p>名前：<%= @user.name %></p>
-      
-      <p>Eメール：<%= @user.email %></p>
+      <%= link_to "スケジュール一覧に戻る", schedules_path, class: "btn btn-lg btn-success" %>
       
     </div>
   
-  </div>
-  
-</div>
-
-<div class="row">
-  
-  <div class="col-sm-6 offset-sm-3">
-
-    <%= link_to "編集", edit_user_path(@user), class: "btn btn-lg btn-primary" %>
-
-    <%= link_to "退会", user_path, method: :delete, data: { confirm: "本当に退会してよろしいですか?"}, class: "btn btn-lg btn-danger" %>
-    
-    <%= link_to "スケジュール一覧に戻る", schedules_path, class: "btn btn-lg btn-success" %>
-    
   </div>
 
 </div>

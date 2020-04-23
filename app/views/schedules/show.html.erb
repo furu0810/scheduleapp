@@ -1,41 +1,48 @@
-<div class="m-5 text-center text-primary">
-  
-  <h3>スケジュールの詳細</h3>
-  
-</div>
+<%# スケジュール詳細ページにCSSを適用 #%>
+<%= stylesheet_link_tag "schedules/show", :media => "all" %>
 
-<div class="row">
+<div class="bg-image">
   
-  <div class="col-sm-6 offset-sm-3">
-  
-    <div class="center jumbotron bg-success">
-      
-      <p>タイトル：<%= @schedule.title %></p>
-      
-      <p>内容：<%= @schedule.body %></p>
-       
-      <p>場所：<%= @schedule.place %></p>
-        
-      <p>開始時間：<%= @schedule.start_time %></p>
-         
-      <p>終了時間：<%= @schedule.end_time %></p>
-        
-    </div>
-
+  <div class="m-5 text-center text-primary">
+    
+    <h3>スケジュールの詳細</h3>
+    
   </div>
-
-</div>
-
-<div class="row align-items-center">
   
-  <div class="col-sm-6 offset-sm-3">
-
-    <%= link_to "スケジュールの一覧に戻る", schedules_path, class: "btn btn-lg btn-primary" %>
+  <div class="row">
     
-    <%= link_to "削除する", schedule_path, method: :delete, data: { confirm: "本当に削除してよろしいですか？" }, class: "btn btn-danger btn-lg" %>
+    <div class="col-sm-6 offset-sm-3">
     
-    <%= link_to "編集する", edit_schedule_path, class: "btn btn-lg btn-secondary" %>
+      <div class="center jumbotron bg-success">
+        
+        <p>タイトル：<%= @schedule.title %></p>
+        
+        <p>内容：<%= @schedule.body %></p>
+         
+        <p>場所：<%= @schedule.place %></p>
+          
+        <p>開始時間：<%= @schedule.start_time %></p>
+           
+        <p>終了時間：<%= @schedule.end_time %></p>
+          
+      </div>
+  
+    </div>
+  
+  </div>
+  
+  <div class="row align-items-center">
     
+    <div class="col-sm-6 offset-sm-3">
+  
+      <%= link_to "スケジュールの一覧に戻る", schedules_path, class: "btn btn-lg btn-primary" %>
+      
+      <%= link_to "削除する", schedule_path, method: :delete, data: { confirm: "本当に削除してよろしいですか？" }, class: "btn btn-danger btn-lg" %>
+      
+      <%= link_to "編集する", edit_schedule_path, class: "btn btn-lg btn-secondary" %>
+      
+    </div>
+  
   </div>
 
 </div>
