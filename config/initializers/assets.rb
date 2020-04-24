@@ -37,6 +37,9 @@ Rails.application.config.assets.precompile += %w( schedules/show.css )
 #スケジュール新規登録ページに対するCSS適用コードの追加
 Rails.application.config.assets.precompile += %w( schedules/new.css )
 
+#スケジュール編集ページに対するCSS適用コードの追加
+Rails.application.config.assets.precompile += %w( schedules/edit.css )
+
 #simple_calendarに対するCSS適用コードの追加
 Rails.application.config.assets.precompile += %w( simple_calendar/_month_calendar.css )
 
