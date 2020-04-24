@@ -22,6 +22,9 @@ Rails.application.config.assets.precompile += %w( users/new.css )
 #ユーザー詳細ページへのCSS適用コードの追加
 Rails.application.config.assets.precompile += %w( users/show.css )
 
+#ユーザー編集ページへのCSS適用コードの追加
+Rails.application.config.assets.precompile += %w( users/edit.css )
+
 #ログインページにCSS適用コードの追加
 Rails.application.config.assets.precompile += %w( sessions/new.css )
 
@@ -33,3 +36,7 @@ Rails.application.config.assets.precompile += %w( schedules/show.css )
 
 #スケジュール新規登録ページに対するCSS適用コードの追加
 Rails.application.config.assets.precompile += %w( schedules/new.css )
+
+#simple_calendarに対するCSS適用コードの追加
+Rails.application.config.assets.precompile += %w( simple_calendar/_month_calendar.css )
+
