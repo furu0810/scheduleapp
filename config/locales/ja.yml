@@ -16,4 +16,4 @@ ja:
         name: 名前
         email: Eメール
         password: パスワード
-        password_confimation: パスワード認証
+        password_confirmation: パスワード認証
