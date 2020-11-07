@@ -43,3 +43,6 @@ Rails.application.config.assets.precompile += %w( schedules/edit.css )
 #simple_calendarに対するCSS適用コードの追加
 Rails.application.config.assets.precompile += %w( simple_calendar/_month_calendar.css )
 
+#スケジュールの一覧ページに対するJavaScriptの読み込みを適用
+Rails.application.config.assets.precompile += %w( schedules/index.js )
+

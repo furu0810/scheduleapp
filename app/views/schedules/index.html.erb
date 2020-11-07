@@ -1,7 +1,16 @@
 <%# スケジュール一覧ページにCSSを適用 #%>
 <%= stylesheet_link_tag "schedules/index", :media => "all" %>
 
+<%# 現在時刻を出力する時計の表示 #%>
+<%= javascript_include_tag "schedules/index" %>
+
 <div class="bg-image">
+  
+  <div class="Clock">
+  
+    <p id="RealtimeClockArea"></p>
+  
+  </div>
   
   <h3>スケジュール一覧</h3>
   

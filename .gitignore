@@ -23,5 +23,9 @@
 /public/assets
 .byebug_history
 
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore Twitter_API_KEY and TWITTER_API_SECRET
+/.env
