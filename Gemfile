@@ -66,6 +66,8 @@ gem "dotenv-rails"
 #Twitter連携のためのgemfileをインストール
 gem "omniauth-twitter"
 
+gem "devise"
+
 gem "omniauth"
 
 group :production do

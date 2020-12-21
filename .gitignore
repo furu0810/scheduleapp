@@ -29,3 +29,4 @@
 
 # Ignore Twitter_API_KEY and TWITTER_API_SECRET
 /.env
+

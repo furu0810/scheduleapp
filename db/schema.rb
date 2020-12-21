@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_28_144648) do
+ActiveRecord::Schema.define(version: 2020_11_23_140902) do
 
   create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "action"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2020_03_28_144648) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
   end
 
   add_foreign_key "notifications", "schedules"
