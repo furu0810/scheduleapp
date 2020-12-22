@@ -27,6 +27,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# Ignore Twitter_API_KEY and TWITTER_API_SECRET
+# Ignore Twitter_API_KEY and TWITTER_API_SECRET and GOOGLE_MAP_API_KEY
 /.env
 
