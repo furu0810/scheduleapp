@@ -12,11 +12,22 @@
   
   </div>
   
+  
   <!--GoogleMapの表示-->
   
   <h2>地図</h2>
   
+  <!--地図入力用のテキストボックスを追加-->
+  
+  <input id="address" type="textbox" value="">
+  
+  <!--ボタンを押すとAddressの処理を実行-->
+  
+  <input type="button" value="場所検索" onclick="Address()">
+  
   <div id='map'></div>
+  
+  <%#GoogleMAPのCSSの処理%>
   
   <style>
   
@@ -26,23 +37,44 @@
   }
   </style>
   
+  <%#ここからGoogleMapの表示機能の実装%>
   <script>
   let map
   
   function initMap(){
+    
     geocoder = new google.maps.Geocoder()
   
     map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 40.7828, lng:-73.9653},
-      zoom: 12,
+      center: {lat: 35.6811673, lng: 139.7670516},
+      zoom: 15,
     });
   
-    marker = new google.maps.Marker({
-      position:  {lat: 40.7828, lng:-73.9653},
-      map: map
-    });
   }
+  
+  function Address(){
+  // 入力を取得
+  let inputAddress = document.getElementById('address').value;
+
+  // geocodingしたあとmapを移動
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+　　　
+      map.setCenter(results[0].geometry.location);
+
+　　　// google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
   </script>
+  
+  <%#ここまで%>
   
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAP_API_KEY"] %>&callback=initMap" async defer></script>
     
