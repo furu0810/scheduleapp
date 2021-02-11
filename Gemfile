@@ -63,6 +63,7 @@ gem "rails-i18n"
 #APIキーやパスワードなどを環境変数として管理
 gem "dotenv-rails"
 
+
 #Twitter連携のためのgemfileをインストール
 gem "omniauth-twitter"
 
